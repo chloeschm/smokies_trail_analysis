@@ -14,3 +14,6 @@ def build_trail_metrics():
 if __name__ == '__main__':
     trails = build_trail_metrics()
     print(trails.iloc[0][['TRAILNAME', 'length_mi', 'gain_ft']])
+    # web maps need lat/lon, so export in EPSG:4326
+    trails.to_crs('EPSG:4326').to_file('outputs/trail_metrics.geojson', driver='GeoJSON')
+    print(f'wrote {len(trails)} segments to outputs/trail_metrics.geojson')

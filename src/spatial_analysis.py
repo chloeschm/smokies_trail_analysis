@@ -6,8 +6,9 @@ import rioxarray
 
 FT_PER_M = 3.28084  # feet per meter
 DEM_PATH = "data/smokies_dem.tif"
-SAMPLE_SPACING = 30  # meters
-SMOOTH_WINDOW = 31  # meters
+SAMPLE_SPACING = 8.82  # meters, DEM cell size (measured: 8.8187 m)
+SMOOTH_SPAN_M = 150  # meters of smoothing span; chosen by validate_gain.py against published gains
+SMOOTH_WINDOW = round(SMOOTH_SPAN_M / SAMPLE_SPACING)  # points
 
 def load_dem(path=DEM_PATH):
     # Load the DEM as a xarray DataArray
