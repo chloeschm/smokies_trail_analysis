@@ -166,3 +166,10 @@ The scripts expect the input files in `data/` and write generated files to
 - **Classification is project-specific:** The difficulty bands are simple
   gain-per-mile thresholds and should not be interpreted as official National
   Park Service difficulty ratings.
+
+## Future work
+
+This version measures gain and groups segments by difficulty. It doesn't yet
+test where difficult segments are located. The next step is a spatial join
+between the segments and NPS trailhead locations, to test whether hard
+segments cluster near particular trailheads or areas of the park.
