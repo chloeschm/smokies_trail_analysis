@@ -17,8 +17,14 @@ The repository includes:
 
 - `data/trails.geojson`: trail geometries and source attributes
   (attributes include trail names, access information, and source metadata)
-- `data/smokies_dem.tif`: the digital elevation model used to sample
-  elevations along each trail geometry
+
+The digital elevation model is not stored in the repository because of its
+size (about 230 MB). Generate it with `src/download_dem.py`, which downloads
+USGS 3DEP elevation data through the `py3dep` package:
+
+- Area: the trail extent plus a 0.01° margin, in lon/lat
+- Requested resolution: 10 m, reprojected to EPSG:5070, giving 8.82 m cells
+- Output: `data/smokies_dem.tif`, the path the pipeline reads
 
 The trail data is reprojected to EPSG:5070 before lengths and elevation profiles 
 are calculated. The final metrics are exported to `outputs/trail_metrics.geojson` 
@@ -86,17 +92,24 @@ map reports how many segments were removed before classification.
 - `outputs/trail_metrics.geojson`: calculated metrics for all trail features
 - `outputs/trail_map.html`: interactive Folium map with colored trail lines,
   popups, and a difficulty legend
-- `outputs/gain_map.png`: static gain visualization
-- `outputs/trails_map.png`: static trail visualization
+- `outputs/top10_gain.png`: horizontal bar chart of the ten filtered segments
+  with the greatest total elevation gain
+- `outputs/length_vs_gain.png`: scatter plot of filtered segment length versus
+  total gain, colored by difficulty band
 
 ## Running the analysis
 
-Run commands from the repository root:
+Install the dependencies with `pip install -r requirements.txt`.
+
+Run commands from the repository root. The DEM download needs internet access
+and only needs to run once:
 
 ```text
+python src/download_dem.py
 python src/analysis.py
 python src/validate_gain.py
 python src/make_map.py
+python src/make_charts.py
 ```
 
 The scripts expect the input files in `data/` and write generated files to
