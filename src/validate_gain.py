@@ -1,6 +1,16 @@
 import spatial_analysis as sa
 from data_cleaning import load_trails
 
+"""
+compare computed elevation gain against published reference ranges.
+
+run from the project root:  python src/validate_gain.py
+
+reference values are third-party web figures (no NPS table was found).
+rainbow falls is excluded: its TRAILNAME segments sum to 6.5 mi by geometry,
+far from the ~5.4 mi published, so the grouping by name is not reliable.
+"""
+
 # (low, high) in feet, from published sources
 REFERENCES = {
     'Ramsey Cascades Trail': (2200, 2375),
