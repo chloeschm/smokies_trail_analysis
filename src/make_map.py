@@ -94,4 +94,5 @@ legend_html += '</div>'
 
 m.get_root().html.add_child(folium.Element(legend_html))
 
-m.save("outputs/trail_map.html")
+# GitHub Pages serves docs/ as the site, so the map is written there as index.html
+m.save("docs/index.html")

@@ -103,8 +103,9 @@ Of the 549 trail segments, 454 remain after excluding the 95 shorter than
 
 ![Trail segments colored by difficulty](outputs/trail_map.png)
 
-The interactive version is in `outputs/trail_map.html`. It shows each
-segment's name, length, gain, gain per mile, difficulty, and location.
+**[Open the interactive map](https://chloeschm.github.io/smokies_trail_analysis/)**.
+Click any trail to see its name, length, gain, gain per mile, difficulty, and
+location.
 
 ### Top 10 segments by total gain
 
@@ -117,8 +118,8 @@ segment's name, length, gain, gain per mile, difficulty, and location.
 ## Outputs
 
 - `outputs/trail_metrics.geojson`: calculated metrics for all trail features
-- `outputs/trail_map.html`: interactive Folium map with colored trail lines,
-  popups, and a difficulty legend
+- `docs/index.html`: interactive Folium map with colored trail lines,
+  popups, and a difficulty legend, published with GitHub Pages
 - `outputs/top10_gain.png`: horizontal bar chart of the ten filtered segments
   with the greatest total elevation gain
 - `outputs/length_vs_gain.png`: scatter plot of filtered segment length versus
