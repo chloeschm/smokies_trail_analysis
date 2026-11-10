@@ -87,6 +87,33 @@ Segments shorter than 0.1 mile are excluded from the map because their
 gain-per-mile values are especially sensitive to small elevation errors. The
 map reports how many segments were removed before classification.
 
+## Results
+
+Of the 549 trail segments, 454 remain after excluding the 95 shorter than
+0.1 mile. The median gain per mile is 270 ft/mi.
+
+| Difficulty | Segments |
+| --- | ---: |
+| Easy | 209 |
+| Moderate | 153 |
+| Difficult | 81 |
+| Very Challenging | 11 |
+
+### Trail map
+
+![Trail segments colored by difficulty](outputs/trail_map.png)
+
+The interactive version is in `outputs/trail_map.html`. It shows each
+segment's name, length, gain, gain per mile, difficulty, and location.
+
+### Top 10 segments by total gain
+
+![Top 10 segments by total gain](outputs/top10_gain.png)
+
+### Length versus gain
+
+![Length versus total gain, colored by difficulty](outputs/length_vs_gain.png)
+
 ## Outputs
 
 - `outputs/trail_metrics.geojson`: calculated metrics for all trail features
