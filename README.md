@@ -1,6 +1,6 @@
 # Smokies Trail Analysis
 
-Estimating elevation gain for different trail segmens in GSMNP and presenting the results as 
+Estimating elevation gain for different trail segments in GSMNP and presenting the results as 
 gain per mile and an interactive map :)
 
 ## Question
